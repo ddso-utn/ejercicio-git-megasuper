@@ -6,6 +6,11 @@ class Carrito {
     }
 
     precioTotal() {
+        let total = 0
+        for (const item of this.items) {
+            total += item.precioFinal()
+        }
+        return total
     }
 
     agregarItem(item) {
