@@ -6,6 +6,7 @@ class Carrito {
     }
 
     precioTotal() {
+        return this.items.reduce((prev, curr) => prev + curr.precioFinal(), 0)
     }
 
     agregarItem(item) {
