@@ -6,7 +6,7 @@ class DescuentoFijo {
     }
 
     valorDescontado(precioBase, cantidad) {
-        return this.valor * cantidad
+        return this.valor * cantidad 
     }
 
 }
