@@ -16,6 +16,12 @@ function precioMasAlto(productos) {
     return Math.max(...preciosProductos)
 }
 
+function productoMasCaro(productos) {
+    return productos.reduce((productoMasCaro, productoSiguiente) => {
+        return productoMasCaro.precioBase > productoSiguiente.precioBase ? productoMasCaro : productoSiguiente
+    })
+}
+
 function productosMasBaratosQue(productos, monto) {
     return productos.filter((producto) => producto.precioFinal() < monto )
 }
