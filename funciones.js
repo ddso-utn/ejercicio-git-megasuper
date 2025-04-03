@@ -21,12 +21,14 @@ function productosMasBaratosQue(productos, monto) {
 }
 
 function obtenerPrecioTotal(productos) {
+    console.log("obteniendo precio total")
     return productos.reduce((acumulador, productoSiguiente) => {
         return acumulador + productoSiguiente.precioFinal()
     }, 0)
 }
 
 function ordenarLista(productos) {
+    console.log("ordenando lista")
     productos.sort((p1, p2) => p1.precioFinal() - p2.precioFinal())
 }
 
