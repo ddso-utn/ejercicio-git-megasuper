@@ -6,11 +6,7 @@ class Carrito {
     }
 
     precioTotal() {
-        let total = 0
-        for (const item of this.items) {
-            total += item.precioFinal()
-        }
-        return total
+        return this.items.reduce((prev, curr) => prev + curr.precioFinal(), 0)
     }
 
     agregarItem(item) {
