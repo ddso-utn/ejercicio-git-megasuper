@@ -36,6 +36,10 @@ function ordenarLista(productos) {
     productos.sort((p1, p2) => p1.precioFinal() - p2.precioFinal())
 }
 
+function obtenerPrecioTotalSinDescuentos(productos) {
+    return productos.reduce((acumulador, productoSiguiente) => acumulador + productoSiguiente.precioBase, 0)
+}
+
 module.exports = { 
     aumentarPrecioBaseForEach, 
     aumentarPrecioBaseMap, 
