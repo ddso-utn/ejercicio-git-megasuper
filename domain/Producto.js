@@ -5,7 +5,6 @@ class Producto {
     constructor(nombre, precioBase) {
         this.nombre = nombre
         this.#precioBase = precioBase
-        this.descuentos = []
     }
 
     get precioBase() {
