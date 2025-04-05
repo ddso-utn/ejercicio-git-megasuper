@@ -1,0 +1,26 @@
+{
+  "name": "megasuper-evolutivo",
+  "version": "1.0.0",
+  "description": "Enunciado del ejercicio: [Docs](https://docs.google.com/document/d/1ymC8HYAnxdVQ4hF-AtILktSxfUrcl5xzqM1J2NgA8KU/edit?tab=t.0)",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./ejemplos.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ddso-utn/ejercicio-git-megasuper.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ddso-utn/ejercicio-git-megasuper/issues"
+  },
+  "homepage": "https://github.com/ddso-utn/ejercicio-git-megasuper#readme",
+  "dependencies": {
+    "chalk": "^5.4.0",
+    "figlet": "^1.8.0"
+  }
+}

@@ -1,7 +1,10 @@
-const { Carrito } = require("./domain/Carrito");
-const { DescuentoFijo, DescuentoPorCantidad, DescuentoPorcentual } = require("./domain/Descuento");
-const { ItemCarrito } = require("./domain/ItemCarrito");
-const { Producto } = require("./domain/Producto");
+import { Carrito } from "./domain/Carrito.js"
+import { DescuentoFijo, DescuentoPorCantidad, DescuentoPorcentual } from "./domain/Descuento.js"
+import { ItemCarrito } from "./domain/ItemCarrito.js"
+import { Producto } from "./domain/Producto.js"
+
+import chalk from "chalk"
+import figlet from "figlet"
 
 const p1 = new Producto("Coca", 10)
 const carrito = new Carrito()
@@ -13,4 +16,14 @@ item.agregarDescuento(new DescuentoPorcentual(10))
 carrito.agregarItem(item)
 carrito.agregarItem(item2)
 
-console.log(carrito.precioTotal())
+
+figlet("MegaSuper", function (err, data) {
+    if (err) {
+      console.log("Something went wrong...");
+      console.dir(err);
+      return;
+    }
+    console.log(chalk.blue(data));
+});
+
+console.log(chalk.blue("El precio total es: ") + chalk.red(carrito.precioTotal()))
