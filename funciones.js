@@ -16,6 +16,12 @@ function precioMasAlto(productos) {
     return Math.max(...preciosProductos)
 }
 
+function productoMasCaro(productos) {
+    return productos.reduce((productoMasCaro, productoSiguiente) => {
+        return productoMasCaro.precioBase > productoSiguiente.precioBase ? productoMasCaro : productoSiguiente
+    })
+}
+
 function productosMasBaratosQue(productos, monto) {
     return productos.filter((producto) => producto.precioFinal() < monto )
 }
@@ -29,11 +35,7 @@ function ordenarLista(productos) {
 }
 
 function obtenerPrecioTotalSinDescuentos(productos) {
-    let total = 0
-    for (const producto of productos) {
-        total += producto.precioBase
-    }
-    return total
+    return productos.reduce((acumulador, productoSiguiente) => acumulador + productoSiguiente.precioBase, 0)
 }
 
 module.exports = { 

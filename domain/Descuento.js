@@ -1,17 +1,17 @@
 
-class DescuentoFijo {
+export class DescuentoFijo {
 
     constructor(valor) {
         this.valor = valor
     }
 
     valorDescontado(precioBase, cantidad) {
-        return this.valor * cantidad 
+        return this.valor
     }
 
 }
 
-class DescuentoPorcentual {
+export class DescuentoPorcentual {
     constructor(porcentaje) {
         this.porcentaje = porcentaje
     }
@@ -21,7 +21,7 @@ class DescuentoPorcentual {
     }
 }
 
-class DescuentoPorCantidad {
+export class DescuentoPorCantidad {
     constructor(cantidadMinima, porcentaje) {
         this.cantidadMinima = cantidadMinima
         this.porcentaje = porcentaje
@@ -30,11 +30,7 @@ class DescuentoPorCantidad {
     valorDescontado(precioBase, cantidad) {
         const vecesRepetido = Math.floor(cantidad / this.cantidadMinima)
         let valorDescontado = 0
-        if (vecesRepetido >= 1) {
-            valorDescontado = precioBase * (this.porcentaje / 100) * vecesRepetido
-        }
+        valorDescontado = precioBase * (this.porcentaje / 100) * vecesRepetido
         return valorDescontado
     }
 }
-
-module.exports = { DescuentoFijo, DescuentoPorCantidad, DescuentoPorcentual }

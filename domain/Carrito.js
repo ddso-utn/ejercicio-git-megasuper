@@ -1,4 +1,4 @@
-class Carrito {
+export class Carrito {
     items
 
     constructor() {
@@ -6,16 +6,10 @@ class Carrito {
     }
 
     precioTotal() {
-        let total = 0
-        for (const item of this.items) {
-            total += item.precioFinal()
-        }
-        return total
+        return this.items.reduce((prev, curr) => prev + curr.precioFinal(), 0)
     }
 
     agregarItem(item) {
         this.items.push(item)
     }
 }
-
-module.exports = { Carrito }

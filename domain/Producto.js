@@ -1,11 +1,10 @@
-class Producto {
+export class Producto {
 
     #precioBase
 
     constructor(nombre, precioBase) {
         this.nombre = nombre
         this.#precioBase = precioBase
-        this.descuentos = []
     }
 
     get precioBase() {
@@ -16,5 +15,3 @@ class Producto {
         this.#precioBase = nuevoPrecio
     }
 }
-
-module.exports = { Producto }
