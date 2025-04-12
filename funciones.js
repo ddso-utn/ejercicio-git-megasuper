@@ -27,9 +27,7 @@ function productosMasBaratosQue(productos, monto) {
 }
 
 function obtenerPrecioTotal(productos) {
-    return productos.reduce((acumulador, productoSiguiente) => {
-        return acumulador + productoSiguiente.precioFinal()
-    }, 0)
+    return productos.reduce((acumulador, productoSiguiente) => acumulador + productoSiguiente.precioFinal(), 0)
 }
 
 function ordenarLista(productos) {
